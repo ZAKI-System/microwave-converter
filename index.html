@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form id="form1" onsubmit="return false">
+        <div style="text-align: center; font-size: xx-large">
+            課題05 電子レンジの時間変換(自由課題)</div>
+        <br />
+        <div style="text-align: center">
+            <img ID="Image1" Height="128px" src="icon4.png" Width="128px" /></div>
+        <div style="text-align: center; font-size: x-large; color: red">W数は1以上、分は0以上、秒は0～59の、整数で入力してください。<br />
+            ※あまりにも大きすぎるとオーバーフローします。</div>
+        <div style="text-align: center; font-size: xx-large;">
+            <input ID="InputWatt" style="font-size: x-large; width: 125px; text-align: right;" value="600"></input>W
+            で 
+            <input ID="InputMin" style="font-size: x-large; width: 125px; text-align: right" value="3"></input>
+            分 
+            <input ID="InputSec" style="font-size: x-large; width: 125px; text-align: right" value="20"></input>
+            秒<br />
+            を↓<br />
+            <input ID="OutputWatt" style="font-size: x-large; width: 125px; text-align: right" value="800"></input>W
+            の時間に変換すると<br />
+            <input ID="OutputMin" style="font-size: xx-large; color: red;" value="?"></input>
+            分 
+            <input ID="OutputSec" style="font-size: xx-large; color: red;" value="?"></input>
+            秒
+        </div>
+        <br />
+        <div style="font-size: xx-large; text-align: center">
+            <button ID="CalcButton" style="font-size: large; width: 100px;" OnClick="CalcButton_Click()">計算</button>
+            &nbsp;<button ID="ClearButton" style="font-size: large; width: 100px;" OnClick="ClearButton_Click()">クリア</button>
+        </div>
+        <div style="text-align: center; font-size: large; color: forestgreen">
+            <span ID="StatusLabel">ZAKI WebAppへようこそ</span>
+        </div>
+    </form>
+    <div style="text-align: center; font-size: xx-large">
+        <a href="javascript:history.back()">スタートページに戻る</a></div>
+    <div>
+        <button onclick="toggleNaiyou();">詳細</button>
+        <div id="naiyou" style="display:none;">
+            このWebアプリは学校の課題で作成したものの計算処理をJavaScriptに移植しました。以下原文
+            <br><br>
+            私はこのWebアプリの.NET言語をC#にしました。<br />
+            VBよりC#の言語感のほうが慣れているので。<br />
+            それと、今この文章のある部分はデザインエディタの機能ではなく、ソースエディタで書き、ボタンにJavaScriptも使用しています。<br />
+            ※関係ないですが、初期値がなぜあの数値かというと、昼によく食べるレンジ調理のうどんが600W 3:20で、レンジの最大出力が800Wだからです。
+        </div>
+        <script>
+            function toggleNaiyou() {
+                var naiyou = document.getElementById("naiyou");
+                if (naiyou.style.display == "none") {
+                    naiyou.style.display = "block";
+                } else {
+                    naiyou.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
